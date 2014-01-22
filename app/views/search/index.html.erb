@@ -1,0 +1,16 @@
+<h1>Search#index</h1>
+<p>Find me in app/views/search/index.html.erb</p>
+
+
+	<%= form_tag search_index_path, method: :get do %>
+	  <p>
+	    <%= text_field_tag :query, params[:query] %>
+	    <%= submit_tag "Search", name: nil %>
+	  </p>
+	<% end %>
+	<% if @results %>
+	<% @results.each do |fetchresults| %>
+	<%= fetchresults.title %> 
+	<%= fetchresults.year %><br/>
+	<% end %>
+	<% end %>
